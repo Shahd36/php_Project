@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+    <title>Final Project</title>
+  </head>
+  <body class="theme-light">
+    <header>
+      <div class="container nav">
+        <a href="#" class="brand"
+          ><span class="brand_logo">L</span><span>Final Project</span></a
+        >
+      </div>
+
+      <div class="actions">
+        <button id="themeBtn" class="btn outline">Toggle Theme</button>
+        <a href="#contact" class="btn">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="container hero">
+        <div class="hero-text">
+          <h1>Clean, modern starter with fully commented CSS.</h1>
+          <p>
+            Use this page as a reference for what each CSS property does in a
+            real layout. Switch themes, hover the cards, and inspect the code.
+          </p>
+          <div class="actions">
+            <button id="cta" class="btn" onclick="show_alert()">
+              Primary Action
+            </button>
+            <button
+              class="btn outline"
+              onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})"
+            >
+              See Features
+            </button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img
+            src="images/360_F_322304683_7ysRarFkmy2osfPKTOYQv7qTPofKelfb.jpg"
+            alt="Gradient Background"
+            title="Gradient Background"
+          />
+        </div>
+      </section>
+
+      <section id="features" class="container">
+        <div class="grid">
+          <article class="card">
+            <h3>Semantic HTML</h3>
+            <p>
+              Sections, articles, headers, and footers organize content
+              meaningfully.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Responsive Grid</h3>
+            <p>
+              The card grid auto-fits columns and adapts across screen sizes.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Accessible Focus</h3>
+            <p>
+              Inputs use a visible focus ring, improving keyboard navigation.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Theme Tokens</h3>
+            <p>
+              Change a few custom properties to re-skin the entire interface.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="container" style="margin-bottom: 20px">
+        <div class="panel">
+          <h2 style="margin-top: 0">Get in Touch</h2>
+          <form action="" class="contactForm" id="contactForm">
+            <div class="field">
+              <label for="name">Name</label><br />
+              <input
+                name="name"
+                type="text"
+                id="name"
+                placeholder="Put Your Name Here!"
+                required
+              />
+              <small>Enter 2 or more characters. </small>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label><br />
+              <input
+                name="email"
+                type="email"
+                id="email"
+                placeholder="Put Your email Here!"
+                required
+              />
+              <small>We'll never share your email. </small>
+            </div>
+            <button type="submit" class="btn">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <small>&COPY; <span id="year">2025</span> final project</small>
+      </div>
+    </footer>
+
+    <script></script>
+  </body>
+</html>

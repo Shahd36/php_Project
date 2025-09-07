@@ -1,0 +1,248 @@
+:root {
+  --bg: #0f172a; /* Custom property: default page background color (slate-900) */
+  --surface: #111827; /* Custom property: surface color for cards/sections (gray-900) */
+  --text: #e5e7eb; /* Custom property: base text color (gray-200) */
+  --muted: #9ca3af; /* Custom property: dimmed text color (gray-400) */
+  --primary: #2563eb; /* Custom property: primary brand color (blue-600) */
+  --primary-contrast: #ffffff; /* Custom property: legible text color on primary backgrounds */
+  --ring: rgba(37, 99, 235, 0.5); /* Custom property: focus ring glow color */
+  --radius: 16px; /* Custom property: base corner radius used across UI */
+  --maxw: 1100px; /* Custom property: max readable content width */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35); /* Custom property: soft elevated shadow */
+  --gap: 1rem; /* Custom property: consistent spacing token */
+  --transition: 200ms ease; /* Custom property: global transition timing */
+}
+
+/* Light theme overrides applied by adding .theme-light to <body> */
+body.theme-light {
+  --bg: #f8fafc; /* Light mode page background (slate-50) */
+  --surface: #ffffff; /* Light mode surface color (white) */
+  --text: #0b1220; /* Light mode text color (near black) */
+  --muted: #475569; /* Light mode muted text */
+  --primary: #2563eb; /* Keep same brand color across themes */
+  --ring: rgba(
+    37,
+    99,
+    235,
+    0.35
+  ); /* Slightly lighter focus ring in light theme */
+  --shadow: 0 12px 24px rgba(2, 6, 23, 0.08); /* Softer shadow in light theme */
+}
+
+/* Global Reset Styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 80% -10%, rgba(37, 99, 235, .2), transparent 60%), var(--bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  position: sticky;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  top: 0;
+  z-index: 50;
+  background-color: color-mix(in oklab, var(--bg) 70%, transparent);  
+  padding-bottom: 10px;
+  padding-top: 10px;
+  backdrop-filter: blur(6px);
+}
+
+.nav {
+  align-items: center;
+  gap: var(--gap);
+  padding: 0.75rem 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand_logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background-color: #2563eb;
+  box-shadow: var(--shadow);
+  margin-left: 150px;
+}
+
+.actions {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  float: right;
+  clear: auto;
+  margin-top: 0;
+  margin-right: 150px;
+}
+
+.btn {
+  appearance: none;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  background: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition),
+    box-shadow var(--transition) filter var(--transition);
+  box-shadow: var(--shadow);
+  user-select: none;
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px var(--muted);
+}
+
+.btn.outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid currentColor;
+  box-shadow: none;
+}
+
+main {
+  flex: 1;
+}
+
+.hero {
+  padding: 4rem 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center; 
+  gap: 2rem;
+}
+
+.hero h1 {
+  margin: 0;
+  margin-top: 20px;
+  font-size: clamp(2rem, 4vw + 1rem, 3.25rem);
+  font-weight: bolder;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-style: italic;
+}
+
+.hero p {
+  margin: 1rem 0 2rem;
+  color: var(--muted);
+  max-width: 60ch;
+}
+.hero .actions {
+    float: left;
+}
+
+img {
+    border-radius: 30px;
+    aspect-ratio: 4/3;
+    width: 450px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  justify-content: center;
+  gap: 5px;
+  padding: 2rem 0;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  transition: translate var(--transition) border-color var(--transition);
+  translate: 0 0;
+}
+
+.card:hover {
+  border-color: var(--primary);
+  translate: 0 -4px;
+  border: 1px solid var(--primary);
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+
+.panel {
+    background-color: white;
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+.contactForm label {
+    font-weight: 500;
+}
+.contactForm small {
+    color: var(--muted);
+    margin-top: 0;
+}
+.contactForm input {
+    border: none;
+    border: 1px solid rgb(218, 217, 217);
+    border-radius: 10px;
+    height: 30px;
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding: 20px;
+}
+.contactForm .btn {
+    width: 100%;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+footer {
+    color: var(--muted);
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
